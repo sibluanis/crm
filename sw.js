@@ -1,6 +1,6 @@
 // Keeps only this small app shell on the phone so it can be installed and opens fast.
 // The CRM itself (Google) is never cached: it always loads fresh.
-var CACHE = 'crm-shell-v1';
+var CACHE = 'crm-shell-v2';
 var FILES = ['./', 'index.html', 'manifest.json', 'icon-192.png', 'icon-512.png', 'icon-maskable.png', 'apple-touch-icon.png'];
 self.addEventListener('install', function (e) {
   e.waitUntil(caches.open(CACHE).then(function (c) { return c.addAll(FILES); }).then(function () { return self.skipWaiting(); }));
